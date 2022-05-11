@@ -1,9 +1,9 @@
 require('./Config/Conexion');
 
-/*const Colegio = require("./Esquemas/Colegio");
+const Colegio = require("./Esquemas/Colegio");
 const Curso = require("./Esquemas/Curso");
 const Persona = require("./Esquemas/Persona");
-const Tipo_persona = require("./Esquemas/TipoPersona");*/
+const Tipo_Persona = require("./Esquemas/TipoPersona");
 
 const express = require('express');
 
@@ -22,16 +22,16 @@ app.use((req, res, next) => {
 app.set('port', port);
 app.use(express.json());
 
-/*app.use('/colegio', require('./Rutas/Colegio'))
-app.use('/curso', require('./Rutas/Curso'))
+//app.use('/colegio', require('./Rutas/Colegio'))
+/*app.use('/curso', require('./Rutas/Curso'))
 app.use('/persona', require('./Rutas/Persona'))
 app.use('/tipo_persona', require('./Rutas/TipoPersona'))*/
 
 app.listen(app.get('port'),(error)=>{
     if(error)
     {
-        console.log('Error en la conexion'+error)
+        console.log('Error en la conexion'+ error)
     }else{
-        console.log('Servidor iniciado en el puerto: '+port)
+        console.log('Servidor iniciado en el puerto: '+ port)
     }
 })
