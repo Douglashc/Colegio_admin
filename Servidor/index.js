@@ -6,10 +6,12 @@ const Persona = require("./Esquemas/Persona");
 const Tipo_Persona = require("./Esquemas/TipoPersona");
 
 const express = require('express');
-
-const port = (process.env.port || 3000)
-
+const port = (process.env.port || 3000);
 const app = express();
+const cors = require('cors');
+
+app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -22,10 +24,7 @@ app.use((req, res, next) => {
 app.set('port', port);
 app.use(express.json());
 
-//app.use('/colegio', require('./Rutas/Colegio'))
-/*app.use('/curso', require('./Rutas/Curso'))
-app.use('/persona', require('./Rutas/Persona'))
-app.use('/tipo_persona', require('./Rutas/TipoPersona'))*/
+app.use("/colegio", require("./Rutas/Colegio"));
 
 app.listen(app.get('port'),(error)=>{
     if(error)
