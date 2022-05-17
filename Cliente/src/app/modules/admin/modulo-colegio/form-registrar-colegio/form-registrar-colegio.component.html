@@ -1,0 +1,62 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w-3xl">
+            <form class="flex flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden">
+                <p class="text-lg font-medium">Informacion del Colegio</p>
+                <p class="text-secondary mb-6">
+                    Este formulario permite agregar nuevos registros de colegios para poder administrarlos
+                </p>
+                <div class="flex flex-col gt-xs:flex-row">
+                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                        <input
+                            [(ngModel)]="colegio.nombreColegio"
+                            name="nombreColegio"
+                            matInput
+                            [placeholder]="'Nombre del colegio'">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:home'"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <input
+                            [(ngModel)]="colegio.direccion"
+                            name="direccion"
+                            matInput
+                            [placeholder]="'Direccion del colegio'">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:location-marker'"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <input
+                            [(ngModel)]="colegio.telefono"
+                            name="telefono"
+                            type="number"
+                            matInput
+                            [placeholder]="'Ingrese el telefono del colegio'">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:phone'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex items-center justify-end border-t -mx-8 mt-8 px-8 py-5 bg-gray-50 dark:bg-gray-700">
+                    <button mat-button routerLink="/lista-colegio">
+                        Cancelar
+                    </button>
+                    <button
+                        class="px-6 ml-3"
+                        mat-flat-button
+                        [color]="'primary'"
+                        (click)="agregarColegio()">
+                        Registrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

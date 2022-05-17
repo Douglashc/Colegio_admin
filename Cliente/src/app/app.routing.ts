@@ -75,7 +75,8 @@ export const appRoutes: Route[] = [
         },
         children   : [
             {path: 'dashboard', loadChildren: () => import('app/modules/admin/dashboard/dashboard.module').then(m => m.DashboardModule)},
-            {path: 'lista-colegio', loadChildren: () => import('app/modules/admin/modulo-colegio/tabla-listar-colegio/tabla-listar-colegio.module').then(m => m.TablaListarColegioModule)}
+            {path: 'lista-colegio', loadChildren: () => import('app/modules/admin/modulo-colegio/tabla-listar-colegio/tabla-listar-colegio.module').then(m => m.TablaListarColegioModule)},
+            {path: 'registrar-colegio', loadChildren: () => import('app/modules/admin/modulo-colegio/form-registrar-colegio/form-registrar-colegio.module').then(m => m.FormRegistrarColegioModule)}
         ]
     }
 ];
