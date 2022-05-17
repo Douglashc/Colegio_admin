@@ -4,7 +4,7 @@ const Persona = require('../Esquemas/Persona');
 
 //Retornar todos los registros de persona
 rutas.get('/', (req, res) => {
-    Persona.find({}).exec()
+    Persona.find({}).populate('cursoID').populate('tipo_personaID').exec()
     .then((list)=>{
         res.json(list);
         console.log(res)
@@ -24,7 +24,7 @@ rutas.post('/', (req, res) => {
 
 //Obtener un solo dato de persona para editar
 rutas.get('/:id', (req, res) => {
-    Persona.findById({ _id: req.params.id }).exec()
+    Persona.findById({ _id: req.params.id }).populate('cursoID').populate('tipo_personaID').exec()
     .then((list) =>{
         res.json(list);
         console.log(res)

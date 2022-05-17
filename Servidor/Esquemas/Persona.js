@@ -14,7 +14,7 @@ const personaSchema = new mongoose.Schema({
     celular: { type: String },
     direccion_domicilio: { type: String },
     foto: { type: String },
-    estado: { type: Boolean },
+    estado: { type: Boolean, default: true },
     cursoID: { type: mongoose.ObjectId, ref: Curso },
     tipo_personaID: { type: mongoose.ObjectId, ref: Tipo_Persona }
 })

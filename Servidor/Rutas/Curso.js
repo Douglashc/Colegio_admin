@@ -4,7 +4,7 @@ const Curso = require('../Esquemas/Curso');
 
 //Retornar todos los registros de cursos
 rutas.get('/', (req, res) => {
-    Curso.find({}).exec()
+    Curso.find({}).populate('colegioID').exec()
     .then((list)=>{
         res.json(list);
         console.log(res)
@@ -24,7 +24,7 @@ rutas.post('/', (req, res) => {
 
 //Obtener un solo dato de curso para editar
 rutas.get('/:id', (req, res) => {
-    Curso.findById({ _id: req.params.id }).exec()
+    Curso.findById({ _id: req.params.id }).populate('colegioID').exec()
     .then((list) =>{
         res.json(list);
         console.log(res)

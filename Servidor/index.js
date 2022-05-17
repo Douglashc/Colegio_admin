@@ -25,6 +25,9 @@ app.set('port', port);
 app.use(express.json());
 
 app.use("/colegio", require("./Rutas/Colegio"));
+app.use('/curso', require("./Rutas/Curso"));
+app.use('/tipoPersona', require("./Rutas/TipoPersona"));
+app.use('/persona', require("./Rutas/Persona"));
 
 app.listen(app.get('port'),(error)=>{
     if(error)
