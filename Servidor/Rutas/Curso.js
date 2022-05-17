@@ -2,9 +2,9 @@ const rutas = require('express').Router();
 
 const Curso = require('../Esquemas/Curso');
 
-//Retornar todos los registros de cursos
-rutas.get('/', (req, res) => {
-    Curso.find({}).populate('colegioID').exec()
+//Retornar los cursos seleccionando un colegio
+rutas.get('/:id', (req, res) => {
+    Curso.find({ colegioID: req.params.id }).populate('colegioID').exec()
     .then((list)=>{
         res.json(list);
         console.log(res)

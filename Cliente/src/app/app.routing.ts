@@ -80,7 +80,8 @@ export const appRoutes: Route[] = [
             {path: 'editar-colegio/:id', loadChildren: () => import('app/modules/admin/modulo-colegio/form-actualizar-colegio/form-actualizar-colegio.module').then(m => m.FormActualizarColegioModule)},
             {path: 'lista-tipo-persona', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/tabla-listar-tipo-persona/tabla-listar-tipo-persona.module').then(m => m.TablaListarTipoPersonaModule)},
             {path: 'registrar-tipo-persona', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/form-registrar-tipo-persona/form-registrar-tipo-persona.module').then(m => m.FormRegistrarTipoPersonaModule)},
-            {path: 'editar-tipo-persona/:id', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/form-actualizar-tipo-persona/form-actualizar-tipo-persona.module').then(m => m.FormActualizarTipoPersonaModule)}
+            {path: 'editar-tipo-persona/:id', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/form-actualizar-tipo-persona/form-actualizar-tipo-persona.module').then(m => m.FormActualizarTipoPersonaModule)},
+            {path: 'lista-curso/:id', loadChildren: () =>import('app/modules/admin/modulo-curso/tabla-listar-curso/tabla-listar-curso.module').then(m => m.TablaListarCursoModule)}
         ]
     }
 ];

@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class TablaListarColegioComponent implements OnInit {
 
-  columnas: string[] = ['Colegio', 'Direccion', 'Telefono', 'Editar'];
+  columnas: string[] = ['Colegio', 'Direccion', 'Telefono', 'Aulas','Editar'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -60,6 +60,11 @@ export class TablaListarColegioComponent implements OnInit {
   modificarColegio(id:any)
   {
     this.router.navigate(['/editar-colegio/'+id]);
+  }
+
+  mostrarCursos(id:any)
+  {
+    this.router.navigate(['/lista-curso/'+id]);
   }
 
 }
