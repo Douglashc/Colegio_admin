@@ -77,7 +77,8 @@ export const appRoutes: Route[] = [
             {path: 'dashboard', loadChildren: () => import('app/modules/admin/dashboard/dashboard.module').then(m => m.DashboardModule)},
             {path: 'lista-colegio', loadChildren: () => import('app/modules/admin/modulo-colegio/tabla-listar-colegio/tabla-listar-colegio.module').then(m => m.TablaListarColegioModule)},
             {path: 'registrar-colegio', loadChildren: () => import('app/modules/admin/modulo-colegio/form-registrar-colegio/form-registrar-colegio.module').then(m => m.FormRegistrarColegioModule)},
-            {path: 'editar-colegio/:id', loadChildren: () => import('app/modules/admin/modulo-colegio/form-actualizar-colegio/form-actualizar-colegio.module').then(m => m.FormActualizarColegioModule)}
+            {path: 'editar-colegio/:id', loadChildren: () => import('app/modules/admin/modulo-colegio/form-actualizar-colegio/form-actualizar-colegio.module').then(m => m.FormActualizarColegioModule)},
+            {path: 'lista-tipo-persona', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/tabla-listar-tipo-persona/tabla-listar-tipo-persona.module').then(m => m.TablaListarTipoPersonaModule)}
         ]
     }
 ];

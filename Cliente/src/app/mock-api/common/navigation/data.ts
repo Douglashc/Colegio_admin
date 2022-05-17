@@ -31,6 +31,29 @@ export const defaultNavigation: FuseNavigationItem[] = [
             },
          
         ]
+    },
+    {
+        id   : 'tipo-persona',
+        title: 'Tipo personas',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'tipo-persona.lista',
+                title: 'Lista tipo personas',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-tipo-persona'
+            },
+            {
+                id   : 'tipo-persona.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-tipo-persona'
+            },
+         
+        ]
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
@@ -60,6 +83,29 @@ export const compactNavigation: FuseNavigationItem[] = [
                 type : 'basic',
                 icon : 'heroicons_outline:pencil',
                 link : '/registrar-colegio'
+            },
+         
+        ]
+    },
+    {
+        id   : 'tipo-persona',
+        title: 'Tipo personas',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'tipo-persona.lista',
+                title: 'Lista tipo personas',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-tipo-persona'
+            },
+            {
+                id   : 'tipo-persona.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-tipo-persona'
             },
          
         ]
@@ -95,6 +141,29 @@ export const futuristicNavigation: FuseNavigationItem[] = [
             },
          
         ]
+    },
+    {
+        id   : 'tipo-persona',
+        title: 'Tipo personas',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'tipo-persona.lista',
+                title: 'Lista tipo personas',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-tipo-persona'
+            },
+            {
+                id   : 'tipo-persona.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-tipo-persona'
+            },
+         
+        ]
     }
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
@@ -124,6 +193,29 @@ export const horizontalNavigation: FuseNavigationItem[] = [
                 type : 'basic',
                 icon : 'heroicons_outline:pencil',
                 link : '/registrar-colegio'
+            },
+         
+        ]
+    },
+    {
+        id   : 'tipo-persona',
+        title: 'Tipo personas',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'tipo-persona.lista',
+                title: 'Lista tipo personas',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-tipo-persona'
+            },
+            {
+                id   : 'tipo-persona.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-tipo-persona'
             },
          
         ]
