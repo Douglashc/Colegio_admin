@@ -3,37 +3,129 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'dashboard',
+        title: 'Dashboard',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/dashboard'
+    },
+    {
+        id   : 'colegio',
+        title: 'Colegios',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'colegio.lista',
+                title: 'Lista de colegios',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-colegio'
+            },
+            {
+                id   : 'colegio.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-colegio'
+            },
+         
+        ]
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'dashboard',
+        title: 'Dashboard',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/dashboard'
+    },
+    {
+        id   : 'colegio',
+        title: 'Colegios',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'colegio.lista',
+                title: 'Lista de colegios',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-colegio'
+            },
+            {
+                id   : 'colegio.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-colegio'
+            },
+         
+        ]
     }
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'dashboard',
+        title: 'Dashboard',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/dashboard'
+    },
+    {
+        id   : 'colegio',
+        title: 'Colegios',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'colegio.lista',
+                title: 'Lista de colegios',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-colegio'
+            },
+            {
+                id   : 'colegio.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-colegio'
+            },
+         
+        ]
     }
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'dashboard',
+        title: 'Dashboard',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/dashboard'
+    },
+    {
+        id   : 'colegio',
+        title: 'Colegios',
+        type : 'collapsable',
+        icon : 'mat_outline:home_work',
+        children: [
+            {
+                id   : 'colegio.lista',
+                title: 'Lista de colegios',
+                type : 'basic',
+                icon : 'heroicons_outline:book-open',
+                link : '/lista-colegio'
+            },
+            {
+                id   : 'colegio.registrar',
+                title: 'Nuevo colegio',
+                type : 'basic',
+                icon : 'heroicons_outline:pencil',
+                link : '/registrar-colegio'
+            },
+         
+        ]
     }
 ];
