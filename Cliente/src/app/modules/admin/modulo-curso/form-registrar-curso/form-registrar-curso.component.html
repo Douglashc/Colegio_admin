@@ -3,22 +3,24 @@
     <div class="flex-auto p-6 sm:p-10">
         <div class="max-w-3xl">
             <form class="flex flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden">
-                <p class="text-lg font-medium">Informacion del Curso</p>
+                <p class="text-lg font-medium">Agregar nuevo curso ({{ lista_combo_box_colegio['nombreColegio'] }})</p>
                 <p class="text-secondary mb-6">
                     Este formulario permite agregar nuevos registros de cursos para poder administrarlos
                 </p>
                 <div class="flex flex-col gt-xs:flex-row">
+                    
                     <mat-form-field class="flex-auto gt-xs:pr-3">
                         <mat-select [(ngModel)]="curso.colegioID" name="colegioID" [placeholder]="'Seleccione el colegio'">
-                            <mat-option *ngFor="let lista of lista_combo_box_colegio" value="{{lista._id}}">
-                                {{ lista.nombreColegio }}
+                            <mat-option [value]="lista_combo_box_colegio['_id']">
+                                {{ lista_combo_box_colegio['nombreColegio'] }}
                             </mat-option>
                         </mat-select>
                         <mat-icon
                             class="icon-size-5"
                             matPrefix
                             [svgIcon]="'heroicons_solid:location-marker'"></mat-icon>
-                    </mat-form-field>
+                    </mat-form-field> 
+                    
                     <mat-form-field class="flex-auto gt-xs:pl-3">
                         <input
                             [(ngModel)]="curso.nombreCurso"

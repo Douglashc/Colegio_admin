@@ -38,8 +38,8 @@ export class ServicioCursoService {
   }
 
   //Obtener los colegios para el combo box
-  getColegiosComboBox()
+  getColegiosComboBox(id:string)
   {
-    return this.http.get(this.url2);
+    return this.http.get(this.url2+'/'+id);
   }
 }

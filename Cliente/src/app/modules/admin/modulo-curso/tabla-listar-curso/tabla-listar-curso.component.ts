@@ -58,6 +58,12 @@ export class TablaListarCursoComponent implements OnInit {
     );
   }
 
+  obtenerColegioId()
+  {
+    const id_entrante2 = this.activated_route.snapshot.params['id'];
+    this.router.navigate(['/registrar-curso/'+id_entrante2]);
+  }
+
   modificarCurso(id:any)
   {
     this.router.navigate(['/editar-curso/'+id]);
