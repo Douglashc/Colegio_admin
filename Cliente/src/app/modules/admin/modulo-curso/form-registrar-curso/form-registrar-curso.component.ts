@@ -32,16 +32,16 @@ export class FormRegistrarCursoComponent implements OnInit {
     this.mensaje = new ClaseMensajes(this.router);
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.listarColegiosComboBox();
   }
 
   //llenado del combo box para seleccionar colegio
   listarColegiosComboBox()
   {
-    const id_entrante = this.activated_router.snapshot.params['id']
+    const id_entrante = this.activated_router.snapshot.params['id'];
 
-    this.servicio_curso.getColegiosComboBox(id_entrante).subscribe(
+    this.servicio_curso.getColegioComboBox(id_entrante).subscribe(
       res => {
         console.log(res);
         this.lista_combo_box_colegio = <any>res;
@@ -54,12 +54,13 @@ export class FormRegistrarCursoComponent implements OnInit {
   agregarCurso()
   {
     delete this.curso._id;
+    const id_entrante2 = this.activated_router.snapshot.params['id'];
 
     this.servicio_curso.aniadirCurso(this.curso).subscribe(
       res => {
-        this.mensaje.mensajeRegistroExitoso('/lista-colegio');
+        this.mensaje.mensajeRegistroExitoso('/lista-curso/'+id_entrante2);
       },
-      err => this.mensaje.mensajeError('/lista-colegio')
+      err => this.mensaje.mensajeError('/lista-curso/'+id_entrante2)
     )
   }
 

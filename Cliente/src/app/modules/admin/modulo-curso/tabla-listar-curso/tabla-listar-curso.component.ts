@@ -6,6 +6,8 @@ import { InterfaceCurso } from 'app/interfaces/interface-curso';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 
+import { InterfaceColegio } from 'app/interfaces/interface-colegio';
+
 @Component({
   selector: 'app-tabla-listar-curso',
   templateUrl: './tabla-listar-curso.component.html',
@@ -19,6 +21,7 @@ export class TablaListarCursoComponent implements OnInit {
 
   //Array de cursos
   curso_lista: InterfaceCurso[];
+  colegio_seleccionado: InterfaceColegio[];
   
   //Variable donde se almacena la paginacion
   dataSource: any;
@@ -27,6 +30,7 @@ export class TablaListarCursoComponent implements OnInit {
   constructor(private curso_servicio: ServicioCursoService, private router: Router, private activated_route: ActivatedRoute)
   {
     this.curso_lista = [];
+    this.colegio_seleccionado = [];
   }
 
   //Inicializando el listado de cursos
@@ -53,15 +57,16 @@ export class TablaListarCursoComponent implements OnInit {
         this.curso_lista=<any>res;
         this.dataSource = new MatTableDataSource(this.curso_lista);
         this.dataSource.paginator = this.paginator;
+        
+        this.curso_servicio.getColegioComboBox(id_entrante).subscribe(
+          res => {
+            this.colegio_seleccionado=<any>res;
+          },
+          err => console.log(err)
+        );
       },
       err=>console.log(err)
     );
-  }
-
-  obtenerColegioId()
-  {
-    const id_entrante2 = this.activated_route.snapshot.params['id'];
-    this.router.navigate(['/registrar-curso/'+id_entrante2]);
   }
 
   modificarCurso(id:any)
@@ -69,4 +74,9 @@ export class TablaListarCursoComponent implements OnInit {
     this.router.navigate(['/editar-curso/'+id]);
   }
 
+  obtenerColegioId()
+  {
+    const id_entrante2 = this.activated_route.snapshot.params['id'];
+    this.router.navigate(['/registrar-curso/'+id_entrante2]);
+  }
 }
