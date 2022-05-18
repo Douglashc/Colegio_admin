@@ -60,7 +60,7 @@ export class TablaListarCursoComponent implements OnInit {
 
   modificarCurso(id:any)
   {
-    
+    this.router.navigate(['/editar-curso/'+id]);
   }
 
 }

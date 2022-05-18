@@ -1,0 +1,61 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w-3xl">
+            <form class="flex flex-col mt-4 px-8 pt-10 bg-card shadow rounded overflow-hidden">
+                <p class="text-lg font-medium">Informacion del Curso</p>
+                <p class="text-secondary mb-6">
+                    Este formulario permite agregar nuevos registros de cursos para poder administrarlos
+                </p>
+                <div class="flex flex-col gt-xs:flex-row">
+                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                        <mat-select [(ngModel)]="curso.colegioID" name="colegioID" [placeholder]="'Seleccione el colegio'">
+                            <mat-option *ngFor="let lista of lista_combo_box_colegio" value="{{lista._id}}">
+                                {{ lista.nombreColegio }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:location-marker'"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <input
+                            [(ngModel)]="curso.nombreCurso"
+                            name="nombreCurso"
+                            matInput
+                            [placeholder]="'Ingrese el nombre que tendra el curso'">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:location-marker'"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="flex-auto gt-xs:pl-3">
+                        <input
+                            [(ngModel)]="curso.paralelo"
+                            name="paralelo"
+                            matInput
+                            [placeholder]="'Ingrese el paralelo que tendra en curso (A,B,C)'">
+                        <mat-icon
+                            class="icon-size-5"
+                            matPrefix
+                            [svgIcon]="'heroicons_solid:phone'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex items-center justify-end border-t -mx-8 mt-8 px-8 py-5 bg-gray-50 dark:bg-gray-700">
+                    <button mat-button (click)="cancelar()">
+                        Cancelar
+                    </button>
+                    <button
+                        class="px-6 ml-3"
+                        mat-flat-button
+                        [color]="'primary'"
+                        (click)="agregarCurso()">
+                        Registrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

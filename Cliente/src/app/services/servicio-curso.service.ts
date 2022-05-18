@@ -9,6 +9,7 @@ import { InterfaceCurso } from 'app/interfaces/interface-curso';
 export class ServicioCursoService {
 
   url = 'http://localhost:3000/curso';
+  url2 = 'http://localhost:3000/colegio'
 
   constructor(private http: HttpClient) { }
 
@@ -34,5 +35,11 @@ export class ServicioCursoService {
   editarCurso(id:string, curso:InterfaceCurso)
   {
     return this.http.put(this.url+'/'+id, curso);
+  }
+
+  //Obtener los colegios para el combo box
+  getColegiosComboBox()
+  {
+    return this.http.get(this.url2);
   }
 }
