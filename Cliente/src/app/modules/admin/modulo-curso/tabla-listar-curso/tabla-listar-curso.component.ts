@@ -72,7 +72,8 @@ export class TablaListarCursoComponent implements OnInit {
 
   modificarCurso(id:any)
   {
-    this.router.navigate(['/editar-curso/'+id]);
+    const id_colegio = this.activated_route.snapshot.params['id'];
+    this.router.navigate(['/editar-curso/'+id_colegio+'/'+id]);
   }
 
   obtenerColegioId()
