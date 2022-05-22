@@ -42,7 +42,7 @@ export class ServicioPersonaService {
   getCursoComboBox(id:string)
   {
     console.log('id curso sevicio: '+id)
-    return this.http.get(this.url2+'/'+id);
+    return this.http.get(this.url2+'/combobox/'+id);
   }
 
   //Obtener tipo persona para el combo box, y asi agregarselo a la persona

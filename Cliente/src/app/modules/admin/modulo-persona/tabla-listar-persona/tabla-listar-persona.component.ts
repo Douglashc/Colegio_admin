@@ -5,6 +5,7 @@ import { ServicioPersonaService } from 'app/services/servicio-persona.service';
 import { InterfacePersona } from 'app/interfaces/interface-persona';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { Location } from '@angular/common';
 
 import { InterfaceCurso } from 'app/interfaces/interface-curso';
 
@@ -15,7 +16,7 @@ import { InterfaceCurso } from 'app/interfaces/interface-curso';
 })
 export class TablaListarPersonaComponent implements OnInit {
 
-  columnas: string[] = ['Nombre Completo', 'Fecha de Nacimiento', 'Ci', 'Genero', 'Email', 'Celular', 'Direccion domicilio','Editar'];
+  columnas: string[] = ['Nombre Completo', 'Fecha de Nacimiento', 'Ci', 'Genero', 'Email', 'Celular', 'Direccion domicilio', 'Tipo persona','Editar'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -27,7 +28,7 @@ export class TablaListarPersonaComponent implements OnInit {
   dataSource: any;
   
   //Inicializando nuestras variables
-  constructor(private persona_servicio: ServicioPersonaService, private router: Router, private activated_route: ActivatedRoute)
+  constructor(private persona_servicio: ServicioPersonaService, private router: Router, private activated_route: ActivatedRoute, private location: Location)
   {
     this.persona_lista = [];
     this.curso_seleccionado = [];
@@ -48,12 +49,11 @@ export class TablaListarPersonaComponent implements OnInit {
   
   //Listando todos los registros de persona de curso seleccionado
   listarPersona()
-  {
+  { 
     const id_entrante = this.activated_route.snapshot.params['id'];
 
     this.persona_servicio.getPersona(id_entrante).subscribe(
       res=>{
-        console.log(res);
         this.persona_lista=<any>res;
         this.dataSource = new MatTableDataSource(this.persona_lista);
         this.dataSource.paginator = this.paginator;
@@ -78,6 +78,11 @@ export class TablaListarPersonaComponent implements OnInit {
   {
     const id_entrante2 = this.activated_route.snapshot.params['id'];
     this.router.navigate(['/registrar-persona/'+id_entrante2]);
+  }
+
+  cancelar()
+  {
+    this.location.back();
   }
 
 }

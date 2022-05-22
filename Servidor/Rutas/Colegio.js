@@ -12,6 +12,16 @@ rutas.get('/', (req, res) => {
     .catch((error) => console.log(error))
 });
 
+//Retornar colegio para combobox y titulo
+rutas.get('/combobox/:id', (req, res) => {
+    Colegio.findById({ _id: req.params.id }).exec()
+    .then((list)=>{
+        res.json(list);
+        console.log(res)
+    })
+    .catch((error) => console.log(error))
+});
+
 //Registro de nuevos colegios
 rutas.post('/', (req, res) => {
     Colegio.create(req.body)

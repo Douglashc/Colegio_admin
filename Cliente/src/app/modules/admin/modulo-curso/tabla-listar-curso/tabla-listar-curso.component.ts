@@ -60,6 +60,7 @@ export class TablaListarCursoComponent implements OnInit {
         
         this.curso_servicio.getColegioComboBox(id_entrante).subscribe(
           res => {
+            console.log(res)
             this.colegio_seleccionado=<any>res;
           },
           err => console.log(err)
@@ -85,4 +86,5 @@ export class TablaListarCursoComponent implements OnInit {
   {
     this.router.navigate(['/lista-persona/'+id]);
   }
+
 }

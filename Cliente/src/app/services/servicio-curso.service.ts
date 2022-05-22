@@ -16,7 +16,7 @@ export class ServicioCursoService {
   //Obtener los cursos de acuerdo a la seleccion de colegio
   getCurso(id:string)
   {
-    return this.http.get(this.url+'/'+id);
+    return this.http.get(this.url+'/mostrar/'+id);
   }
 
   //Obtener un solo dato de curso para editarlo
@@ -40,6 +40,6 @@ export class ServicioCursoService {
   //Obtener los colegio para el combo box
   getColegioComboBox(id:string)
   {
-    return this.http.get(this.url2+'/'+id);
+    return this.http.get(this.url2+'/combobox/'+id);
   }
 }

@@ -3,8 +3,18 @@ const rutas = require('express').Router();
 const Curso = require('../Esquemas/Curso');
 
 //Retornar los cursos seleccionando un colegio
-rutas.get('/:id', (req, res) => {
+rutas.get('/mostrar/:id', (req, res) => {
     Curso.find({ colegioID: req.params.id }).populate('colegioID').exec()
+    .then((list)=>{
+        res.json(list);
+        console.log(res)
+    })
+    .catch((error) => console.log(error))
+});
+
+//Retornar curso para combo box
+rutas.get('/combobox/:id', (req, res) => {
+    Curso.findById({ _id: req.params.id }).exec()
     .then((list)=>{
         res.json(list);
         console.log(res)
