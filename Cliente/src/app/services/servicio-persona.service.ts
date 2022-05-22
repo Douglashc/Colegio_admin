@@ -23,7 +23,7 @@ export class ServicioPersonaService {
   //Obtener un solo dato de persona para editarlo
   getUnaPersona(id:string)
   {
-    return this.http.get(this.url+'/'+id);
+    return this.http.get(this.url+'/editar/'+id);
   }
 
   //Agregar una persona al curso

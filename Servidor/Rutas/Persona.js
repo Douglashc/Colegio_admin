@@ -23,7 +23,7 @@ rutas.post('/', (req, res) => {
 });
 
 //Obtener un solo dato de persona para editar
-rutas.get('/:id', (req, res) => {
+rutas.get('/editar/:id', (req, res) => {
     Persona.findById({ _id: req.params.id }).populate('cursoID').populate('tipo_personaID').exec()
     .then((list) =>{
         res.json(list);

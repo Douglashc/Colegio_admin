@@ -71,7 +71,8 @@ export class TablaListarPersonaComponent implements OnInit {
 
   modificarPersona(id:any)
   {
-    this.router.navigate(['/editar-persona/'+id]);
+    const id_curso = this.activated_route.snapshot.params['id'];
+    this.router.navigate(['/editar-persona/'+id_curso+'/'+id]);
   }
 
   obtenerCursoId()

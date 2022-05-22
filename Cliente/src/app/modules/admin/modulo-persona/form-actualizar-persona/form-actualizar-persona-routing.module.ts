@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { FormActualizarPersonaComponent } from './form-actualizar-persona.component';
+
+const routes: Routes = [
+  { path: '', component: FormActualizarPersonaComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
