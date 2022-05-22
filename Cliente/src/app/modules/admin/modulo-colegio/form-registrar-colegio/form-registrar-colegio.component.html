@@ -12,6 +12,7 @@
                         <input
                             [(ngModel)]="colegio.nombreColegio"
                             name="nombreColegio"
+                            required
                             matInput
                             [placeholder]="'Nombre del colegio'">
                         <mat-icon
@@ -23,6 +24,7 @@
                         <input
                             [(ngModel)]="colegio.direccion"
                             name="direccion"
+                            required
                             matInput
                             [placeholder]="'Direccion del colegio'">
                         <mat-icon
@@ -35,6 +37,7 @@
                             [(ngModel)]="colegio.telefono"
                             name="telefono"
                             type="number"
+                            required
                             matInput
                             [placeholder]="'Ingrese el telefono del colegio'">
                         <mat-icon

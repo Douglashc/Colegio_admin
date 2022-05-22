@@ -5,6 +5,7 @@ import { InterfaceColegio } from 'app/interfaces/interface-colegio';
 import { Router } from '@angular/router';
 
 import { ClaseMensajes } from 'app/interfaces/clase-mensajes';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-registrar-colegio',
