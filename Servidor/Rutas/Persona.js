@@ -3,8 +3,8 @@ const rutas = require('express').Router();
 const Persona = require('../Esquemas/Persona');
 
 //Retornar todos los registros de persona
-rutas.get('/', (req, res) => {
-    Persona.find({}).populate('cursoID').populate('tipo_personaID').exec()
+rutas.get('/:id', (req, res) => {
+    Persona.find({ cursoID: req.params.id }).populate('cursoID').populate('tipo_personaID').exec()
     .then((list)=>{
         res.json(list);
         console.log(res)

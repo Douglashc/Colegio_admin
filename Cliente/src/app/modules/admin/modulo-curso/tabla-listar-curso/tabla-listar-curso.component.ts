@@ -15,7 +15,7 @@ import { InterfaceColegio } from 'app/interfaces/interface-colegio';
 })
 export class TablaListarCursoComponent implements OnInit {
 
-  columnas: string[] = ['Curso', 'Paralelo','Editar'];
+  columnas: string[] = ['Curso', 'Paralelo', 'Personas','Editar'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -78,5 +78,11 @@ export class TablaListarCursoComponent implements OnInit {
   {
     const id_entrante2 = this.activated_route.snapshot.params['id'];
     this.router.navigate(['/registrar-curso/'+id_entrante2]);
+  }
+
+
+  mostrarPersonas(id:any)
+  {
+    this.router.navigate(['/lista-persona/'+id]);
   }
 }

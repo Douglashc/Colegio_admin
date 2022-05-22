@@ -82,7 +82,9 @@ export const appRoutes: Route[] = [
             {path: 'registrar-tipo-persona', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/form-registrar-tipo-persona/form-registrar-tipo-persona.module').then(m => m.FormRegistrarTipoPersonaModule)},
             {path: 'editar-tipo-persona/:id', loadChildren: () => import('app/modules/admin/modulo-tipo-persona/form-actualizar-tipo-persona/form-actualizar-tipo-persona.module').then(m => m.FormActualizarTipoPersonaModule)},
             {path: 'lista-curso/:id', loadChildren: () =>import('app/modules/admin/modulo-curso/tabla-listar-curso/tabla-listar-curso.module').then(m => m.TablaListarCursoModule)},
-            {path: 'registrar-curso/:id', loadChildren: () =>import('app/modules/admin/modulo-curso/form-registrar-curso/form-registrar-curso.module').then(m => m.FormRegistrarCursoModule)}
+            {path: 'registrar-curso/:id', loadChildren: () =>import('app/modules/admin/modulo-curso/form-registrar-curso/form-registrar-curso.module').then(m => m.FormRegistrarCursoModule)},
+            {path: 'lista-persona/:id', loadChildren: () => import('app/modules/admin/modulo-persona/tabla-listar-persona/tabla-listar-persona.module').then(m => m.TablaListarPersonaModule)}
+        
         ]
     }
 ];
